@@ -1,9 +1,9 @@
 // schemas Mongoose
 const mongoose = require("mongoose");
 
-const ValideSchema = new mongoose.Schema(
+const ChapterSchema = new mongoose.Schema(
   {
-    title: { type: String, required: true, min: 3 },
+    title: { type: String, required: true, minlength: 3 },
     content: { type: String, required: true },
     number: {
       type: Number,
@@ -12,15 +12,14 @@ const ValideSchema = new mongoose.Schema(
         validator: (v) => v > 0,
         message: "The number must be start with 1.",
       },
-      unique: true,
     },
     bookId: {
       type: mongoose.Schema.Types.ObjectId,
-      // ref: "Book",
+      ref: "Book",
       required: true,
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Valide", ValideSchema);
+module.exports = mongoose.model("Chapter", ChapterSchema);

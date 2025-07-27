@@ -26,3 +26,15 @@ html(lang="en")
                   label(for="bookId" class="form-label") Book ID
                   input(type="text" name="bookId" id="bookId" class="form-control" placeholder="Book ID" required)
                 button(type="submit" class="btn btn-primary w-100") Submit
+                  // Affichage de la liste des chapitres
+              if chapters && chapters.length
+                h2.mt-5.mb-3.text-center.text-secondary Existing Chapters
+                ul.list-group
+                  each chapter in chapters
+                    li.list-group-item
+                      strong #{chapter.title}
+                      |  (Number: #{chapter.number}, Book ID: #{chapter.bookId})
+                      br
+                      small.text-muted #{chapter.content}
+              else
+                p.mt-5.text-center.text-muted No chapters found.

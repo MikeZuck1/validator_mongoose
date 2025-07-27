@@ -15,7 +15,7 @@ Créer une route `POST /chapitres` qui permet d’ajouter un chapitre, en utilis
    - `numero` : *number*, requis, positif, **unique par livre** (via validateur personnalisé)
    - `livreId` : *ObjectId*, requis
 
-2. Implémente un **validateur personnalisé** sur `numero` pour s’assurer qu’il n’existe pas déjà pour un même `livreId`.
+2. Implémente un **validateur personnalisé** sur `numero` pour s’assurer qu’il n’existe pas déjà pour un même `bookId`.
 
 3. Crée une **route `POST /chapitres`** dans Express pour créer un chapitre.
 
