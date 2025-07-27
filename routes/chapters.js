@@ -4,11 +4,7 @@ const router = express.Router();
 const Chapters = require("../models/Chapters");
 
 router.get("/", async (req, res) => {
-  try {
-    res.status(200).render("chapters");
-  } catch (err) {
-    res.status(400).send("not found", err.message);
-  }
+  res.status(200).render("chapters");
 });
 
 router.post("/", async (req, res) => {
