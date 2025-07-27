@@ -3,8 +3,12 @@ const express = require("express");
 const router = express.Router();
 const Chapters = require("../models/Chapters");
 
-router.get("/", (req, res) => {
-  res.status(200).render("chapters");
+router.get("/", async (req, res) => {
+  try {
+    res.status(200).render("chapters");
+  } catch (err) {
+    res.status(400).send("not found", err.message);
+  }
 });
 
 router.post("/", async (req, res) => {

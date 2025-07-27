@@ -16,7 +16,7 @@ const ValideSchema = new mongoose.Schema(
     },
     bookId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Book",
+      // ref: "Book",
       required: true,
     },
   },
